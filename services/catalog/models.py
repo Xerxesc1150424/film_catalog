@@ -15,6 +15,7 @@ class Film(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     tmdb_id: Mapped[int] = mapped_column(unique=True)
     title: Mapped[str] = mapped_column(String(300))
+    original_title: Mapped[str | None] = mapped_column(String(300))
     year: Mapped[int | None]
     overview: Mapped[str | None] = mapped_column(Text)
 
