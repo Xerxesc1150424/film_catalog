@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from sqlalchemy import text
 
-from db import engine
+import models
+from db import Base, engine
+
+Base.metadata.create_all(engine)
 
 app = FastAPI(title="film_catalog")
 
